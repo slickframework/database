@@ -26,7 +26,7 @@ also applies the [semantic version 2.0.0](http://semver.org) specification.
 Via Composer
 
 ``` bash
-$ composer require slick/common
+$ composer require slick/database
 ```
 
 ## Usage
