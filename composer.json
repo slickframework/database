@@ -1,16 +1,45 @@
 {
-    "name": "slick/database",
-    "description": "Database libraries for Slick Framework",
-    "license": "MIT",
-    "keywords": ["slick", "database"],
-    "autoload": {
-        "psr-0": {
-            "Slick\\Database\\": ""
-        }
-    },
-    "target-dir": "Slick/Database",
-    "require": {
-        "slick/Common": "self.version",
-        "slick/utility": "self.version"
+  "name": "slick/database",
+  "description": "Slick database package is a PDO wrapper.",
+  "keywords": [
+    "slick",
+    "database",
+    "DDL",
+    "SQL",
+    "schema"
+  ],
+  "homepage": "https://github.com/slickframework/database",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Filipe Silva",
+      "email": "silvam.filipe@gmail.com",
+      "role": "Developer"
     }
+  ],
+  "require": {
+    "php" : ">=5.4.0",
+    "slick/common": "@dev"
+  },
+  "require-dev": {
+    "phpunit/phpunit" : "4.*",
+    "scrutinizer/ocular": "~1.1",
+    "behat/behat": "~3.0.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Slick\\Database\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Slick\\Tests\\Database\\": "tests"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.1-dev",
+      "dev-develop": "1.2-dev"
+    }
+  }
 }
