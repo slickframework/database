@@ -5,7 +5,7 @@
 [![Build Status](https://img.shields.io/travis/slickframework/database/develop.svg?style=flat-square)](https://travis-ci.org/slickframework/database)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/slickframework/database/develop.svg?style=flat-square)](https://scrutinizer-ci.com/g/slickframework/database/code-structure?branch=develop)
 [![Quality Score](https://img.shields.io/scrutinizer/g/slickframework/database/develop.svg?style=flat-square)](https://scrutinizer-ci.com/g/slickframework/database?branch=develop)
-[![Total Downloads](https://img.shields.io/packagist/dt/slick/database/develop.svg?style=flat-square)](https://packagist.org/packages/slick/database)
+[![Total Downloads](https://img.shields.io/packagist/dt/slick/database.svg?style=flat-square)](https://packagist.org/packages/slick/database)
 
 Database adapter is a vary powerful, yet lightweight object that allows you to
 connect to database drivers and abstracts all the iteration you regularly need
