@@ -94,7 +94,7 @@ class SqliteAdapter extends AbstractAdapter implements AdapterInterface
         $parts = explode(';', $sql);
         $result = 0;
         foreach ($parts as $query) {
-            $result = parent::execute($query, $parameters = []);
+            $result = parent::execute($query, $parameters);
         }
         return $result;
     }
