@@ -139,7 +139,8 @@ abstract class AbstractAdapter extends Base implements AdapterInterface
     public function query($sql, $parameters = [])
     {
         $this->checkConnection();
-        $result = $this->runQuery($this->getSql($sql), $parameters);
+        $statement = $this->runQuery($this->getSql($sql), $parameters);
+        $result = $statement->fetchAll($this->fetchMode);
 
         return new RecordList(['data' => $result]);
     }
@@ -318,9 +319,7 @@ abstract class AbstractAdapter extends Base implements AdapterInterface
      *                           as there are bound parameters in the SQL
      *                           statement being executed
      *
-     * @return array An array containing all of the remaining rows in the
-     * result set. The array represents each row as either an array of column
-     * values or an object with properties corresponding to each column name.
+     * @return \PDOStatement The statement resulting form the query execution
      */
     protected function runQuery($query, $parameters = [])
     {
@@ -331,7 +330,6 @@ abstract class AbstractAdapter extends Base implements AdapterInterface
             $end = microtime(true);
             $time = $end - $start;
             $this->affectedRows = $statement->rowCount();
-            $result = $statement->fetchAll($this->fetchMode);
             $this->getLogger()->info(
                 "Query ({$this->connectionName}): Query with results",
                 [
@@ -349,6 +347,6 @@ abstract class AbstractAdapter extends Base implements AdapterInterface
                 "Database error: {$this->getLastError()}"
             );
         }
-        return $result;
+        return $statement;
     }
 }

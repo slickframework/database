@@ -115,10 +115,7 @@ class AbstractAdapterTest extends TestCase
         $statement->expects($this->once())
             ->method('rowCount')
             ->willReturn($count);
-        $statement->expects($this->once())
-            ->method('fetchAll')
-            ->with(\PDO::FETCH_NAMED, null, null)
-            ->willReturn([]);
+        
 
         $pdoMock = $this->getPDOMock();
         $pdoMock->expects($this->once())

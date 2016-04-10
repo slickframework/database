@@ -74,10 +74,6 @@ class SqliteAdapterTest extends TestCase
         $statement->expects($this->exactly(2))
             ->method('rowCount')
             ->willReturn($count);
-        $statement->expects($this->exactly(2))
-            ->method('fetchAll')
-            ->with(\PDO::FETCH_NAMED, null, null)
-            ->willReturn([]);
 
         $pdoMock = $this->getMockBuilder('Slick\Tests\Database\Fixtures\MockPDO')
             ->getMock();
